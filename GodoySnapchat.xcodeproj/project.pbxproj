@@ -7,9 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		12D7F41B2C053E1C0006599E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12D7F41A2C053E1C0006599E /* GoogleService-Info.plist */; };
+		12D7F41D2C0544DB0006599E /* SnapsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D7F41C2C0544DB0006599E /* SnapsViewController.swift */; };
+		12D7F41F2C054CD80006599E /* ImagenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D7F41E2C054CD80006599E /* ImagenViewController.swift */; };
 		12E8BA8C2BFE54EA00BBBB9D /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 12E8BA8B2BFE54EA00BBBB9D /* GoogleSignIn */; };
 		12E8BA8E2BFE54EA00BBBB9D /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 12E8BA8D2BFE54EA00BBBB9D /* GoogleSignInSwift */; };
-		12E8BA902BFE553100BBBB9D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12E8BA8F2BFE553100BBBB9D /* GoogleService-Info.plist */; };
 		FA12FE762BFBFB4300BDB032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12FE752BFBFB4300BDB032 /* AppDelegate.swift */; };
 		FA12FE782BFBFB4300BDB032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA12FE772BFBFB4300BDB032 /* SceneDelegate.swift */; };
 		FA12FE7D2BFBFB4300BDB032 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA12FE7B2BFBFB4300BDB032 /* Main.storyboard */; };
@@ -44,7 +46,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		12E8BA8F2BFE553100BBBB9D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		12D7F4192C053B500006599E /* GodoySnapchat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = GodoySnapchat.entitlements; sourceTree = "<group>"; };
+		12D7F41A2C053E1C0006599E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		12D7F41C2C0544DB0006599E /* SnapsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapsViewController.swift; sourceTree = "<group>"; };
+		12D7F41E2C054CD80006599E /* ImagenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagenViewController.swift; sourceTree = "<group>"; };
 		FA12FE722BFBFB4300BDB032 /* GodoySnapchat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GodoySnapchat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA12FE752BFBFB4300BDB032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA12FE772BFBFB4300BDB032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -115,10 +120,13 @@
 		FA12FE742BFBFB4300BDB032 /* GodoySnapchat */ = {
 			isa = PBXGroup;
 			children = (
-				12E8BA8F2BFE553100BBBB9D /* GoogleService-Info.plist */,
+				12D7F4192C053B500006599E /* GodoySnapchat.entitlements */,
 				FA12FE752BFBFB4300BDB032 /* AppDelegate.swift */,
+				12D7F41A2C053E1C0006599E /* GoogleService-Info.plist */,
 				FA1370202BFC08AA00D6D1C2 /* iniciarSesionViewController.swift */,
 				FA12FE772BFBFB4300BDB032 /* SceneDelegate.swift */,
+				12D7F41C2C0544DB0006599E /* SnapsViewController.swift */,
+				12D7F41E2C054CD80006599E /* ImagenViewController.swift */,
 				FA12FE7B2BFBFB4300BDB032 /* Main.storyboard */,
 				FA12FE7E2BFBFB4400BDB032 /* Assets.xcassets */,
 				FA12FE802BFBFB4400BDB032 /* LaunchScreen.storyboard */,
@@ -262,9 +270,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA12FE822BFBFB4400BDB032 /* LaunchScreen.storyboard in Resources */,
-				12E8BA902BFE553100BBBB9D /* GoogleService-Info.plist in Resources */,
 				FA12FE7F2BFBFB4400BDB032 /* Assets.xcassets in Resources */,
 				FA12FE7D2BFBFB4300BDB032 /* Main.storyboard in Resources */,
+				12D7F41B2C053E1C0006599E /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +297,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12D7F41D2C0544DB0006599E /* SnapsViewController.swift in Sources */,
+				12D7F41F2C054CD80006599E /* ImagenViewController.swift in Sources */,
 				FA1370212BFC08AA00D6D1C2 /* iniciarSesionViewController.swift in Sources */,
 				FA12FE762BFBFB4300BDB032 /* AppDelegate.swift in Sources */,
 				FA12FE782BFBFB4300BDB032 /* SceneDelegate.swift in Sources */,
@@ -466,6 +476,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GodoySnapchat/GodoySnapchat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -494,6 +505,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = GodoySnapchat/GodoySnapchat.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
