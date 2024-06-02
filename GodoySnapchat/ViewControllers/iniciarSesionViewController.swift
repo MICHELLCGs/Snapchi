@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
+import FirebaseDatabase
 
 class iniciarSesionViewController: UIViewController {
     
@@ -15,41 +16,42 @@ class iniciarSesionViewController: UIViewController {
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var emailTextField: UITextField!
     
+    @IBOutlet weak var btnregistro: UIButton!
     @IBOutlet weak var passwordTextField: UITextField!
-    
+    @IBAction func btnRegistroTapped(_ sender: Any) {
+        performSegue(withIdentifier: "RegistrarseSegue", sender: nil)
+        }
     var errorMessage: String?
 
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Do any additional setup after loading the view.
+        
     }
     
     
     @IBAction func iniciarSesionTapped(_ sender: Any) {
-        print("MICHE:" ,emailTextField.text!, " MIXHE2:" , passwordTextField.text! )
-        
         
         Auth.auth().signIn(withEmail: emailTextField.text!, password: passwordTextField.text!) { (user, error) in
-            print("Intentando Iniciar Sesion")
-            if error != nil{
-                print ("Se presento el siguient error: \(error)")
-                Auth.auth().createUser(withEmail: self.emailTextField.text!, password: self.passwordTextField.text!, completion:{(user, error) in print("Intentando crear un usuario")
-                    if error != nil{
-                    print("Se presentó el siguiente error al crear el usuario: \(error)")
-                    }else{
-                        print("El usuario fue creado exitosamente")
-                        self.performSegue (withIdentifier: "iniciarsesionsegue", sender: nil)
+                    if let error = error {
+                        print("Error al iniciar sesión: \(error.localizedDescription)")
+                        
+                        let alerta = UIAlertController(title: "Error de inicio de sesión", message: "El usuario no existe. ¿Desea crear una cuenta?", preferredStyle: .alert)
+                        let btnCrear = UIAlertAction(title: "Crear", style: .default) { (UIAlertAction) in
+                            self.performSegue(withIdentifier: "RegistrarseSegue", sender: nil)
+                        }
+                        let btnCancelar = UIAlertAction(title: "Cancelar", style: .cancel, handler: nil)
+                        
+                        alerta.addAction(btnCrear)
+                        alerta.addAction(btnCancelar)
+                        
+                        self.present(alerta, animated: true, completion: nil)
+                    } else {
+                        print("Inicio de sesión exitoso")
+                        self.performSegue(withIdentifier: "iniciarsesionsegue", sender: nil)
                     }
-                })
-                
-            }else{
-                print ("Inicio de sesion exitoso")
-                
-                self.performSegue (withIdentifier: "iniciarsesionsegue", sender: nil)
-            }
-        }
+                }
     }
     @IBAction func googleAction(_ sender: Any) {
             Task {
@@ -64,7 +66,7 @@ class iniciarSesionViewController: UIViewController {
             }
         }
         
-        // Custom error type for authentication errors
+        
         enum AuthenticationError: Error {
             case tokenError(message: String)
         }
